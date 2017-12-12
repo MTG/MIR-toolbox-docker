@@ -22,4 +22,4 @@ ENV USER=ds
 VOLUME /home/ds/notebooks
 WORKDIR /home/ds/notebooks
 
-CMD ["jupyter-notebook", "--allow-root", "--no-browser",  "--port",  "8888",  "--ip=0.0.0.0"]
+CMD ["jupyter-notebook", "--allow-root", "--no-browser",  "--port",  "8888",  "--ip", "0.0.0.0"]
