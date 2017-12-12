@@ -1,0 +1,16 @@
+numpy
+jupyter
+pyzmq
+scipy
+pandas
+matplotlib
+statsmodels
+scikit-learn
+seaborn
+nltk
+gensim
+sympy
+bokeh
+networkx
+requests
+beautifulsoup4
