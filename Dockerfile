@@ -12,8 +12,6 @@ ADD apt-packages.txt /tmp/apt-packages.txt
 RUN xargs -a /tmp/apt-packages.txt apt-get install -y
 
 ADD requirements.txt /tmp/requirements/requirements.txt
-
-RUN pip3 install -r /tmp/requirements/pre-requirements.txt
 RUN pip3 install -r /tmp/requirements/requirements.txt
 
 EXPOSE 8888
