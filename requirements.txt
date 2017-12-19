@@ -14,3 +14,4 @@ bokeh
 networkx
 requests
 beautifulsoup4
+-e git+http://github.com/MTG/freesound-python.git#egg=freesound-python
