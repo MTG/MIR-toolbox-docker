@@ -22,4 +22,5 @@ ENV USER=ds
 VOLUME /home/ds/notebooks
 WORKDIR /home/ds/notebooks
 
+ADD jupyter_notebook_config.json /home/ds/.jupyter/
 CMD ["jupyter-notebook", "--allow-root", "--no-browser",  "--port",  "8888",  "--ip", "0.0.0.0"]
