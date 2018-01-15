@@ -22,5 +22,11 @@ ENV USER=ds
 VOLUME /home/ds/notebooks
 WORKDIR /home/ds/notebooks
 
+# Add Tini. Tini operates as a process subreaper for jupyter. This prevents
+# kernel crashes.
+ENV TINI_VERSION v0.6.0
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/bin/tini
+RUN chmod +x /usr/bin/tini
+
 ADD jupyter_notebook_config.json /home/ds/.jupyter/
-CMD ["jupyter-notebook", "--allow-root", "--no-browser",  "--port",  "8888",  "--ip", "0.0.0.0"]
+CMD ["tini", "--", "jupyter-notebook", "--allow-root", "--no-browser",  "--port",  "8888",  "--ip", "0.0.0.0"]
