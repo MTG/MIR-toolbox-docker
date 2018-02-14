@@ -11,6 +11,7 @@ nltk
 gensim
 sympy
 bokeh
+music21
 networkx
 requests
 beautifulsoup4
