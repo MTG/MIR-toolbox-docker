@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-FROM mtgupf/essentia:python3
+FROM mtgupf/essentia:ubuntu16.04-python3
 
 # Export env settings
 ENV TERM=xterm
