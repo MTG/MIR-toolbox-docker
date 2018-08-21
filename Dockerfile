@@ -22,13 +22,19 @@ ADD requirements.txt /tmp/requirements/requirements.txt
 RUN pip3 install --no-cache-dir -r /tmp/requirements/requirements.txt
 
 EXPOSE 8888
-RUN mkdir -p /home/ds/notebooks
-ENV HOME=/home/ds
-ENV SHELL=/bin/bash
-ENV USER=ds
-VOLUME /home/ds/notebooks
-WORKDIR /home/ds/notebooks
 
+RUN adduser -q --gecos "" --disabled-password mir
 
-ADD jupyter_notebook_config.json /home/ds/.jupyter/
-CMD ["tini", "--", "jupyter-notebook", "--allow-root", "--no-browser",  "--port",  "8888",  "--ip", "0.0.0.0"]
+RUN mkdir -p /notebooks
+
+VOLUME /notebooks
+WORKDIR /notebooks
+
+USER mir
+ADD jupyter_notebook_config.json /home/mir/.jupyter/
+
+USER root
+
+ADD start.sh /usr/local/bin
+
+CMD ["start.sh", "tini", "-s", "--", "jupyter-notebook", "--allow-root", "--no-browser",  "--port",  "8888",  "--ip", "0.0.0.0"]
