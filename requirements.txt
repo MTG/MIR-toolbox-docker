@@ -15,6 +15,6 @@ music21
 networkx
 requests
 beautifulsoup4
--e git+http://github.com/MTG/freesound-python.git#egg=freesound-python
+-e git+https://github.com/MTG/freesound-python.git#egg=freesound-python
 -e git+https://github.com/craffel/mir_eval.git#egg=mir_eval
 -e git+https://github.com/MTG/pycompmusic.git#egg=compmusic
