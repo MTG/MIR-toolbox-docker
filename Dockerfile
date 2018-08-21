@@ -19,7 +19,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 ADD requirements.txt /tmp/requirements/requirements.txt
-RUN pip3 install -r /tmp/requirements/requirements.txt
+RUN pip3 install --no-cache-dir -r /tmp/requirements/requirements.txt
 
 EXPOSE 8888
 RUN mkdir -p /home/ds/notebooks
