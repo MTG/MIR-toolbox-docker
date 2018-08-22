@@ -20,14 +20,14 @@ Run the image with no arguments to start a Notebook server as root:
     docker run --rm -p 8888:8888 mtgupf/mir-toolbox
 
 You can access the notebook at http://localhost:8888, use the password **mir**
-to access it.
+to log in.
 
 If you want to access a notebook from your host machine, mount a volume pointing
 to `/notebooks` inside the container
 
     docker run --rm -p 8888:8888 --mount type=bind,source=$(pwd),target=/notebooks mtgupf/mir-toolbox
 
-ensure that the source location in the `--mount` option is an absolute path.
+ensure that the `source` location in the `--mount` option is an absolute path.
 
 ### Permissions
 
@@ -36,4 +36,4 @@ create will be owned by root. To prevent this from happening, you can set an
 environment variable, `JUPYTER_USER_ID` to a UID which will be used to run
 the notebook in the container. You can set this to the UID of your local user:
 
-    docker run --rm -e JUPYTER_USER_ID=1001 -p 8888:8888 --mount type=bind,source=$(pwd),target=/notebooks mtgupf/mir-toolbox
+    docker run --rm -e JUPYTER_USER_ID=$(id -u) -p 8888:8888 --mount type=bind,source=$(pwd),target=/notebooks mtgupf/mir-toolbox
