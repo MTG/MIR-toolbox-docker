@@ -28,4 +28,4 @@ ca-certificates
 curl
 wget
 nano
-sudo
+gosu

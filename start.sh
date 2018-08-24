@@ -18,7 +18,7 @@ if [[ -v JUPYTER_USER_ID && $JUPYTER_USER_ID != 0 ]]; then
     echo Set mir UID to: $JUPYTER_USER_ID
     usermod -u $JUPYTER_USER_ID mir
 
-    exec sudo -E -H -u mir $cmd
+    exec gosu mir $cmd
 else
     exec $cmd
 fi
