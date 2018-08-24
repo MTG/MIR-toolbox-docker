@@ -12,14 +12,14 @@ ENV TINI_VERSION v0.18.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/bin/tini
 RUN chmod +x /usr/bin/tini
 
-ADD apt-packages.txt /tmp/apt-packages.txt
+COPY apt-packages.txt /tmp/
 
 RUN apt-get update \
     && xargs -a /tmp/apt-packages.txt apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
-ADD requirements.txt /tmp/requirements/requirements.txt
-RUN pip3 install --no-cache-dir -r /tmp/requirements/requirements.txt
+COPY requirements.txt /tmp/
+RUN pip3 install --no-cache-dir -r /tmp/requirements.txt
 
 EXPOSE 8888
 
@@ -31,7 +31,7 @@ VOLUME /notebooks
 WORKDIR /notebooks
 
 USER mir
-ADD jupyter_notebook_config.json /home/mir/.jupyter/
+COPY --chown=mir:mir jupyter_notebook_config.json /home/mir/.jupyter/
 
 USER root
 
