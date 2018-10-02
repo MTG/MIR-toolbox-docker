@@ -32,6 +32,7 @@ WORKDIR /notebooks
 
 USER mir
 COPY --chown=mir:mir jupyter_notebook_config.json /home/mir/.jupyter/
+COPY jupyter_notebook_config.json /root/.jupyter/
 
 USER root
 
