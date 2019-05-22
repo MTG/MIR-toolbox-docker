@@ -12,6 +12,7 @@ gensim
 sympy
 bokeh
 music21
+mido
 networkx
 requests
 beautifulsoup4
