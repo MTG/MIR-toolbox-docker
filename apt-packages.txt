@@ -10,8 +10,8 @@ liblapack-dev
 libatlas-base-dev
 libxml2-dev
 libxslt1-dev
-libreadline6
-libreadline6-dev
+libreadline7
+libreadline-dev
 build-essential
 libjpeg8
 libjpeg8-dev
