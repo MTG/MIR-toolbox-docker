@@ -1,4 +1,5 @@
-numpy==1.15.4
+numpy
+#numpy==1.15.4
 jupyter
 pyzmq
 scipy
@@ -18,4 +19,5 @@ requests
 beautifulsoup4
 -e git+https://github.com/MTG/freesound-python.git#egg=freesound-python
 -e git+https://github.com/craffel/mir_eval.git#egg=mir_eval
--e git+https://github.com/MTG/pycompmusic.git#egg=compmusic
+#-e git+https://github.com/MTG/pycompmusic.git#egg=compmusic
+essentia-tensorflow

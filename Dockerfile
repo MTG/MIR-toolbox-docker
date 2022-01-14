@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-FROM mtgupf/essentia:ubuntu18.04-python3
+FROM ubuntu:21.04
 
 # Export env settings
 ENV TERM=xterm
 ENV LANG C.UTF-8
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Add Tini. Tini operates as a process subreaper for jupyter. This prevents
 # kernel crashes.
